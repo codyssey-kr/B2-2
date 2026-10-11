@@ -61,4 +61,4 @@ python3 src/common.py "  Hello   team!  "
 | [충돌 기록](docs/conflict-resolution.md) · [Git 실습 기록](docs/troubleshooting-log.md) | 실제 수행 후 작성 |
 | [제출물 인덱스](SUBMISSION.md) | 실제 기여·증빙 링크 모음 |
 
-GitHub 협업 연습을 위해 첫 PR을 작성합니다. From.Heoney
+GitHub 협업 연습에서 PR 생성과 병합을 연습합니다. From.Heoney
