@@ -34,6 +34,8 @@ GitHub Flow는 작은 작업을 짧은 브랜치에서 완성하고 검토하기
 - `update`, `fix`, `wip`, `final`, `bug fix`처럼 대상·효과가 불분명한 메시지는 쓰지 않습니다.
 - 필요한 파일만 `git add`하고 `git diff --cached`로 확인합니다.
 - amend/reset은 원격에 공개하지 않은 본인 feature 커밋에만 사용합니다.
+- 이미 공유한 변경을 취소할 때는 `git revert`로 취소 내용을 새 커밋에 기록합니다.
+- 추적 중인 파일의 미완성 수정은 `git stash push`로 잠시 보관하고, `git stash pop`으로 다시 적용합니다.
 
 ## PR 규칙 · C 담당
 
