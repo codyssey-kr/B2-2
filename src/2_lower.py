@@ -4,7 +4,6 @@ B 담당: 공백을 정리한 문장을 소문자로 바꾸기."""
 
 from common import normalize_spaces
 
-
 def to_lower(text: str) -> str:
     """공백을 정리한 문장을 소문자로 반환한다.
 
@@ -12,7 +11,6 @@ def to_lower(text: str) -> str:
     """
     text = normalize_spaces(text)
     return text.lower()
-
 
 if __name__ == "__main__":
     print(to_lower("  Hello   Team  "))  # 구현 후 예상: hello team
