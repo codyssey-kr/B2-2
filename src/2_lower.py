@@ -11,7 +11,7 @@ def to_lower(text: str) -> str:
     구현 후 예시: to_lower("  Hello   Team  ") == "hello team"
     """
     text = normalize_spaces(text)
-    return text.upper()
+    return text.lower()
 
 
 if __name__ == "__main__":
