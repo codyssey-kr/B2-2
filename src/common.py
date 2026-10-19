@@ -10,6 +10,10 @@ def normalize_spaces(text: str) -> str:
     return " ".join(text.split())
 
 
+def return_text(text: str) -> str:
+    """공백을 정리한 문자열을 반환한다."""
+    return normalize_spaces(text)
+
 if __name__ == "__main__":
     import argparse
 
