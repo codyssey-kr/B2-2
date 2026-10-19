@@ -1,5 +1,5 @@
 """팀원별 문자열 함수에서 함께 사용하는 공백 정리 유틸."""
-
+import sys
 
 def normalize_spaces(text: str) -> str:
     """앞뒤 공백을 제거하고 연속된 공백 문자를 한 칸으로 합친다.
@@ -8,6 +8,10 @@ def normalize_spaces(text: str) -> str:
     'Hello team!'
     """
     return " ".join(text.split())
+
+
+def fast_print(*args, sep=" ", end="\n"):
+    sys.stdout.write(sep.join(map(str, args)) + end)
 
 
 if __name__ == "__main__":
