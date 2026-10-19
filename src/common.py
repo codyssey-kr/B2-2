@@ -10,15 +10,12 @@ def normalize_spaces(text: str) -> str:
     return " ".join(text.split())
 
 
-<<<<<<< HEAD
 def fast_print(*args, sep=" ", end="\n"):
     sys.stdout.write(sep.join(map(str, args)) + end)
 
-=======
 def return_text(text: str) -> str:
     """공백을 정리한 문자열을 반환한다."""
     return normalize_spaces(text)
->>>>>>> origin/main
 
 if __name__ == "__main__":
     import argparse
