@@ -5,15 +5,22 @@
 
 | 담당 | 실습 | 상태 |
 |---|---|---|
-| 1번 (`parkhojeong`) | amend | 수행 및 기록 준비 중 |
+| 1번 (`parkhojeong`) | amend | 완료 — 원문 증빙 포함 |
 | 2번 | reset --soft | 미수행 — 담당자가 직접 진행 |
 | 3번 | revert | 미수행 — 담당자가 직접 진행 |
 | 4번 | stash / stash pop | 미수행 — 담당자가 직접 진행 |
 
 ## 1번: amend
 
-공개하지 않은 최근 로컬 커밋의 메시지를 더 구체적으로 고칩니다.
-실제 명령과 전후 커밋 정보는 수행 후 기록합니다.
+- 참여자: `parkhojeong`; Codex가 요청에 따라 실제 명령을 실행했습니다.
+- 상황: `feature/1-round-2`의 아직 push하지 않은 최근 문서 커밋 메시지를 구체화했습니다.
+- 변경 전: `3e18bcce9798fa358f07d8fd9430e7f276f77293` — `docs: add troubleshooting log`.
+- 명령: `git commit --amend -m "docs: prepare participant troubleshooting assignments"`.
+- 변경 후: `b41b7b526a1adbd0a07b68b50851fc089c1509d2` — `docs: prepare participant troubleshooting assignments`.
+- 결과: 커밋 ID와 메시지는 바뀌었고 부모 커밋과 파일 트리는 동일했습니다.
+- 주의점: 공개 전 로컬 커밋에만 적용했습니다. 이전 커밋은 교체되었으므로 원문 증빙에 정보를 보관했습니다.
+- 선택 이유: 파일 내용은 유지하고 최근 커밋 메시지만 구체적으로 수정하기 위해 amend를 사용했습니다.
+- [전후 커밋 정보와 실제 명령 출력](evidence/member-1-round-2/amend.json).
 
 ## 2번: reset --soft
 
