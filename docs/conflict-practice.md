@@ -158,3 +158,12 @@ git diff -- 1/lower.py
 예를 들어 `feature/1-round-2`에는 `docs/tasks/1-round-2.md`가 있습니다.
 이 문서는 이슈 본문 양식이 아닙니다. 각자 내용을 이해한 뒤 자신의 말로 목적·작업 범위·
 완료 기준을 작성해 Issue를 만들고 PR에 연결합니다. 실제 수행 결과는 작업 후 기록합니다.
+
+## 2차 Git 트러블슈팅
+
+1번은 [2차 충돌 해결과 amend 사례](evidence/member-1-round-2/README.md)를 남겼습니다.
+2번은 `reset --soft`, 3번은 `revert`, 4번은 `stash`와 `stash pop`을 직접 수행합니다.
+각 작업 브랜치의 `docs/tasks/팀원번호-round-2.md`에 구체적인 순서를 적었습니다.
+충돌 해결을 먼저 커밋해 깨끗한 상태를 만든 뒤 Git 실습을 진행합니다.
+실제 상황·절차·결과·주의점은 `docs/troubleshooting-log.md`에 기록합니다.
+팀원별 2차 Issue는 직접 작성하고 준비된 Draft PR에 연결합니다.
