@@ -5,6 +5,10 @@
 
 ## 기준 이력
 
+- Issue: https://github.com/codyssey-kr/B2-2/issues/19
+- PR: https://github.com/codyssey-kr/B2-2/pull/20
+- 해결 커밋: https://github.com/codyssey-kr/B2-2/commit/03de96f29e20dcc30c3dbbbc8b739948e02ae6b1
+
 - 브랜치: `feature/1-round-2`
 - 병합 전 커밋: `d1e7c9cc7d579f68f5834cc570fbc7eb289139a1`
 - 병합 대상 main: `aa2d9f612ea009550ae2bc9cec13c5b834a9b418`

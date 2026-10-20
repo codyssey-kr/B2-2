@@ -23,6 +23,7 @@
 - 충돌: `text.strip()`과 `normalize_spaces(text)`가 같은 줄을 수정했습니다.
 - 해결 이유: 내부 연속 공백·탭·줄바꿈까지 정리하기 위해 공통 함수를 선택했습니다.
 - 검증: 정상·경계 입력 5개와 파일 직접 실행 통과.
+- PR: [#20](https://github.com/codyssey-kr/B2-2/pull/20).
 - 원문 증빙·전후 결과·재현 명령: [2차 해결 사례](evidence/member-1-round-2/README.md).
 - 자기 점검 기록이며 타인의 승인 리뷰는 별도입니다.
 
