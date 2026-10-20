@@ -1,0 +1,326 @@
+{
+  "results": [
+    {
+      "file": "1/upper.py",
+      "input": "  Hello   Team  ",
+      "expected": "HELLO TEAM",
+      "actual": "HELLO TEAM",
+      "passed": true
+    },
+    {
+      "file": "1/lower.py",
+      "input": "  Hello   Team  ",
+      "expected": "hello team",
+      "actual": "hello team",
+      "passed": true
+    },
+    {
+      "file": "2/length.py",
+      "input": "  Hello   Team  ",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "file": "2/words.py",
+      "input": "  Hello   Team  ",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "file": "3/reverse.py",
+      "input": "  Hello   Team  ",
+      "expected": "Team Hello",
+      "actual": "Team Hello",
+      "passed": true
+    },
+    {
+      "file": "3/exclaim.py",
+      "input": "  Hello   Team  ",
+      "expected": "Hello Team!",
+      "actual": "Hello Team!",
+      "passed": true
+    },
+    {
+      "file": "4/first.py",
+      "input": "  Hello   Team  ",
+      "expected": "Hello",
+      "actual": "Hello",
+      "passed": true
+    },
+    {
+      "file": "4/last.py",
+      "input": "  Hello   Team  ",
+      "expected": "Team",
+      "actual": "Team",
+      "passed": true
+    },
+    {
+      "file": "1/upper.py",
+      "input": "",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "file": "1/lower.py",
+      "input": "",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "file": "2/length.py",
+      "input": "",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "file": "2/words.py",
+      "input": "",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "file": "3/reverse.py",
+      "input": "",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "file": "3/exclaim.py",
+      "input": "",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "file": "4/first.py",
+      "input": "",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "file": "4/last.py",
+      "input": "",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "file": "1/upper.py",
+      "input": " \t\n ",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "file": "1/lower.py",
+      "input": " \t\n ",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "file": "2/length.py",
+      "input": " \t\n ",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "file": "2/words.py",
+      "input": " \t\n ",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "file": "3/reverse.py",
+      "input": " \t\n ",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "file": "3/exclaim.py",
+      "input": " \t\n ",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "file": "4/first.py",
+      "input": " \t\n ",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "file": "4/last.py",
+      "input": " \t\n ",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "file": "1/upper.py",
+      "input": " a\tB\nc ",
+      "expected": "A B C",
+      "actual": "A B C",
+      "passed": true
+    },
+    {
+      "file": "1/lower.py",
+      "input": " a\tB\nc ",
+      "expected": "a b c",
+      "actual": "a b c",
+      "passed": true
+    },
+    {
+      "file": "2/length.py",
+      "input": " a\tB\nc ",
+      "expected": 5,
+      "actual": 5,
+      "passed": true
+    },
+    {
+      "file": "2/words.py",
+      "input": " a\tB\nc ",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "file": "3/reverse.py",
+      "input": " a\tB\nc ",
+      "expected": "c B a",
+      "actual": "c B a",
+      "passed": true
+    },
+    {
+      "file": "3/exclaim.py",
+      "input": " a\tB\nc ",
+      "expected": "a B c!",
+      "actual": "a B c!",
+      "passed": true
+    },
+    {
+      "file": "4/first.py",
+      "input": " a\tB\nc ",
+      "expected": "a",
+      "actual": "a",
+      "passed": true
+    },
+    {
+      "file": "4/last.py",
+      "input": " a\tB\nc ",
+      "expected": "c",
+      "actual": "c",
+      "passed": true
+    },
+    {
+      "file": "1/upper.py",
+      "input": " 안녕  팀 ",
+      "expected": "안녕 팀",
+      "actual": "안녕 팀",
+      "passed": true
+    },
+    {
+      "file": "1/lower.py",
+      "input": " 안녕  팀 ",
+      "expected": "안녕 팀",
+      "actual": "안녕 팀",
+      "passed": true
+    },
+    {
+      "file": "2/length.py",
+      "input": " 안녕  팀 ",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    },
+    {
+      "file": "2/words.py",
+      "input": " 안녕  팀 ",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "file": "3/reverse.py",
+      "input": " 안녕  팀 ",
+      "expected": "팀 안녕",
+      "actual": "팀 안녕",
+      "passed": true
+    },
+    {
+      "file": "3/exclaim.py",
+      "input": " 안녕  팀 ",
+      "expected": "안녕 팀!",
+      "actual": "안녕 팀!",
+      "passed": true
+    },
+    {
+      "file": "4/first.py",
+      "input": " 안녕  팀 ",
+      "expected": "안녕",
+      "actual": "안녕",
+      "passed": true
+    },
+    {
+      "file": "4/last.py",
+      "input": " 안녕  팀 ",
+      "expected": "팀",
+      "actual": "팀",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "command": "PYTHONPATH=. python3 1/upper.py",
+      "exit_code": 0,
+      "stdout": "HELLO TEAM\n"
+    },
+    {
+      "command": "PYTHONPATH=. python3 1/lower.py",
+      "exit_code": 0,
+      "stdout": "hello team\n"
+    },
+    {
+      "command": "PYTHONPATH=. python3 2/length.py",
+      "exit_code": 0,
+      "stdout": "10\n"
+    },
+    {
+      "command": "PYTHONPATH=. python3 2/words.py",
+      "exit_code": 0,
+      "stdout": "2\n"
+    },
+    {
+      "command": "PYTHONPATH=. python3 3/reverse.py",
+      "exit_code": 0,
+      "stdout": "Team Hello\n"
+    },
+    {
+      "command": "PYTHONPATH=. python3 3/exclaim.py",
+      "exit_code": 0,
+      "stdout": "Hello Team!\n"
+    },
+    {
+      "command": "PYTHONPATH=. python3 4/first.py",
+      "exit_code": 0,
+      "stdout": "Hello\n"
+    },
+    {
+      "command": "PYTHONPATH=. python3 4/last.py",
+      "exit_code": 0,
+      "stdout": "Team\n"
+    }
+  ]
+}
