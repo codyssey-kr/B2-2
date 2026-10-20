@@ -11,6 +11,7 @@
 - 병합 전 커밋: `83951874446bd155f2385c6236ffd825f0eafb6e`
 - 병합 대상 main: `bb5ebb7184b774a032a000db70d851d538c7ba45`
 - 충돌 파일: `1/upper.py`
+- 해결 커밋: [a55e5a1](https://github.com/codyssey-kr/B2-2/commit/a55e5a160f6b0df628555401dd5f5dffc26cdf20)
 
 작업 브랜치는 `text.strip()`으로 앞뒤 공백만 제거했고,
 main은 `normalize_spaces(text)`로 연속 공백과 탭·줄바꿈까지 정리했습니다.
