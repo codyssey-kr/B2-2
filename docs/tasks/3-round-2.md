@@ -48,3 +48,35 @@ PYTHONPATH=. python3 3/exclaim.py
 
 이 문서는 작업 참고용입니다. 그대로 등록하는 이슈 양식이나 완료 증빙이 아닙니다.
 읽고 이해한 뒤 자신의 말로 목적·작업 범위·완료 기준을 정리해 Issue를 작성합니다.
+
+## 2차 Git 실습: revert
+
+먼저 1차 PR을 마치고, 1번 2차 사례가 main에 들어온 뒤 이 브랜치의 코드 충돌을 해결합니다.
+충돌 해결을 커밋한 뒤 작업 트리가 깨끗한 상태에서 진행합니다.
+다음 실습 파일이 아직 없을 때만 명령을 실행합니다.
+
+```sh
+mkdir -p docs/practice
+printf '3번 revert 실습: 공개된 변경을 새 커밋으로 취소\n' > docs/practice/member-3-revert.md
+git add docs/practice/member-3-revert.md
+git commit -m "docs: add revert practice note"
+git log -1 --oneline
+git push -u origin feature/3-round-2
+```
+
+실습 커밋이 원격에 올라간 것을 확인하고 링크를 기록합니다.
+이후 다른 커밋을 만들지 않은 상태에서 HEAD가 위 실습 커밋인지 확인한 뒤 되돌립니다.
+충돌 해결 커밋이나 다른 사람의 변경을 되돌리지 않습니다.
+
+```sh
+git show --stat HEAD
+git revert --no-edit HEAD
+git log -2 --oneline
+git status --short
+git push
+```
+
+실습 파일이 삭제되고 원래 커밋과 revert 커밋이 모두 이력에 남는지 확인합니다.
+`docs/troubleshooting-log.md`의 3번 항목에 전후 커밋과 원격 링크, 실제 명령,
+결과, reset 대신 revert를 선택한 이유를 기록합니다.
+main에 직접 push하거나 강제 push하지 않습니다. 이 안내는 수행 완료 증빙이 아닙니다.
