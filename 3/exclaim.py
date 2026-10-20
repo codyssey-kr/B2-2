@@ -5,7 +5,7 @@ from src.common import normalize_spaces
 
 def add_exclamation(text: str) -> str:
     """빈 문장이 아니면 끝에 느낌표를 붙인다. 입력의 공백 처리 방식은 작업 브랜치에서 결정한다."""
-    text = text  # 공백 처리 구현 위치
+    text = text.strip()
     return text + "!" if text else ""
 
 
