@@ -51,3 +51,31 @@ PYTHONPATH=. python3 2/words.py
 
 이 문서는 작업 참고용입니다. 그대로 등록하는 이슈 양식이나 완료 증빙이 아닙니다.
 읽고 이해한 뒤 자신의 말로 목적·작업 범위·완료 기준을 정리해 Issue를 작성합니다.
+
+## 2차 Git 실습: reset --soft
+
+먼저 1차 PR을 마치고, 1번 2차 사례가 main에 들어온 뒤 이 브랜치의 코드 충돌을 해결합니다.
+충돌 해결을 커밋한 뒤 작업 트리가 깨끗한 상태에서 진행합니다.
+다음 실습 파일이 아직 없을 때만 명령을 실행합니다. 코드 해결 커밋 자체를 reset하지 않습니다.
+
+```sh
+mkdir -p docs/practice
+printf '2번 reset 실습: 커밋 취소 후 변경 유지 확인\n' > docs/practice/member-2-reset.md
+git add docs/practice/member-2-reset.md
+git commit -m "docs: add reset practice note"
+git log -1 --oneline
+git reset --soft HEAD~1
+git status --short
+git diff --cached -- docs/practice/member-2-reset.md
+```
+
+실습 커밋은 reset 전에 push하지 않습니다. HEAD는 부모로 돌아가고 파일 변경은
+스테이징된 상태로 유지되는지 실제 출력으로 확인합니다.
+
+```sh
+git commit -m "docs: retain reset practice changes"
+```
+
+`docs/troubleshooting-log.md`의 2번 항목에 참여자, 전후 커밋, 명령 출력,
+index와 작업 파일 상태, 변경이 유지된 이유, PR·커밋 링크를 기록합니다.
+이 안내 자체는 실습 완료 증빙이 아닙니다.
