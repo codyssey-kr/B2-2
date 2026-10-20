@@ -1,0 +1,40 @@
+{
+  "function": "to_upper",
+  "method": "runpy.run_path with normal and boundary inputs",
+  "results": [
+    {
+      "input": "  Hello   Team  ",
+      "expected": "HELLO TEAM",
+      "actual": "HELLO TEAM",
+      "passed": true
+    },
+    {
+      "input": " a\tB\nc ",
+      "expected": "A B C",
+      "actual": "A B C",
+      "passed": true
+    },
+    {
+      "input": "",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "input": " \t\n ",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "input": " 안녕  팀 ",
+      "expected": "안녕 팀",
+      "actual": "안녕 팀",
+      "passed": true
+    }
+  ],
+  "command": "PYTHONPATH=. python3 1/upper.py",
+  "exit_code": 0,
+  "stdout": "HELLO TEAM\n",
+  "stderr": ""
+}
