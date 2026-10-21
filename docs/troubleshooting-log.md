@@ -6,7 +6,7 @@
 | 담당 | 실습 | 상태 |
 |---|---|---|
 | 1번 (`parkhojeong`) | amend | 완료 — 원문 증빙 포함 |
-| 2번 | reset --soft | 미수행 — 담당자가 직접 진행 |
+| 2번 (`YeonJin`) | reset --soft | 완료 — reset 전후 결과 기록 |
 | 3번 | revert | 미수행 — 담당자가 직접 진행 |
 | 4번 | stash / stash pop | 미수행 — 담당자가 직접 진행 |
 
