@@ -1,0 +1,18 @@
+{
+  "source": "Fresh replay in a temporary local clone on 2026-10-21; original merge terminal output was not preserved.",
+  "original_command_from_handoff": "git merge origin/main",
+  "original_stdout": null,
+  "replay": {
+    "branch_head_before": "fbfddd49785fc2df9e8e8edc1c837870e6ce16dc",
+    "merge_target": "0f033fb4626bf3025edf2af9bc8ea5b599ecf9f1",
+    "command": "git merge --no-commit 0f033fb4626bf3025edf2af9bc8ea5b599ecf9f1",
+    "exit_code": 1,
+    "stdout": "Auto-merging 2/words.py\nCONFLICT (content): Merge conflict in 2/words.py\nAuto-merging docs/conflict-practice.md\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+    "stderr": "",
+    "conflicted_file": "2/words.py",
+    "content_with_conflict_markers": "\"\"\"공백으로 구분한 단어 수를 센다.\"\"\"\n\nfrom src.common import normalize_spaces\n\n\ndef count_words(text: str) -> int:\n    \"\"\"공백으로 구분한 단어 수를 센다. 입력의 공백 처리 방식은 작업 브랜치에서 결정한다.\"\"\"\n<<<<<<< HEAD\n    text = text.strip()\n=======\n    text = normalize_spaces(text)\n>>>>>>> 0f033fb4626bf3025edf2af9bc8ea5b599ecf9f1\n    return len(text.split())\n\n\nif __name__ == \"__main__\":\n    print(count_words(\"  Hello   Team  \"))  # 공백 정리 완료 후 예상: 2\n"
+  },
+  "original_marker_fragment_from_handoff": "<<<<<<< HEAD\n    text = text.strip()\n=======\n    text = normalize_spaces(text)\n>>>>>>> origin/main\n",
+  "resolution_commit": "0ed95d31981fd61625fb7e8ea1940e994c1a57e7",
+  "resolved_lines_verified_in_current_file": "    text = normalize_spaces(text)\n    return len(text.split())\n"
+}

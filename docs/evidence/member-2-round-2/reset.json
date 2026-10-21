@@ -1,0 +1,39 @@
+{
+  "source": {
+    "immediate_status_and_cached_diff": "Actual outputs preserved in the user-provided handoff record",
+    "commit_relationships_and_reflog": "Git history inspected on 2026-10-21"
+  },
+  "purpose": "Cancel a local practice commit while keeping its file change staged.",
+  "before_head": "26256ba4080270c51d4019dfa19dc95985d2dcff",
+  "reset_command_from_handoff": "git reset --soft HEAD~1",
+  "reset_command_stdout": null,
+  "immediate_status": {
+    "command": "git status --short",
+    "stdout_from_handoff": "A  docs/practice/member-2-reset.md\n"
+  },
+  "immediate_cached_diff": {
+    "command": "git diff --cached -- docs/practice/member-2-reset.md",
+    "stdout_from_handoff": "diff --git a/docs/practice/member-2-reset.md b/docs/practice/member-2-reset.md\nnew file mode 100644\nindex 0000000..916ca36\n--- /dev/null\n+++ b/docs/practice/member-2-reset.md\n@@ -0,0 +1 @@\n+2번 reset 실습: 커밋 취소 후 변경 유지 확인\n"
+  },
+  "after_head": "0ed95d31981fd61625fb7e8ea1940e994c1a57e7",
+  "after_head_source": "Reflog and parent relationship queried later; reset-time git log -1 output was not preserved.",
+  "reflog_query": {
+    "command": "git reflog show feature/2-round-2-heoney --date=iso --format='%h %gd: %gs' --grep-reflog='reset: moving to HEAD~1'",
+    "stdout": "0ed95d3 feature/2-round-2-heoney@{2026-10-21 14:24:57 +0900}: reset: moving to HEAD~1\n"
+  },
+  "recommit": {
+    "command_from_handoff": "git commit -m \"docs: retain reset practice changes\"",
+    "commit": "a7b9a5d210baab3ce1e6e47bfcfeb6a394527efa",
+    "parent": "0ed95d31981fd61625fb7e8ea1940e994c1a57e7"
+  },
+  "historical_file_diff_check": {
+    "command": "git diff 0ed95d3 26256ba -- docs/practice/member-2-reset.md",
+    "result": "Matches the cached diff output preserved in the handoff record."
+  },
+  "same_tree_check": {
+    "command": "git diff --exit-code 26256ba a7b9a5d",
+    "exit_code": 0,
+    "stdout": ""
+  },
+  "practice_file_later_deleted_in_commit": "42a7761"
+}
