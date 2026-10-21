@@ -1,0 +1,37 @@
+{
+  "branch_head_before": "d1e7c9cc7d579f68f5834cc570fbc7eb289139a1",
+  "main_at_merge": "aa2d9f612ea009550ae2bc9cec13c5b834a9b418",
+  "command": "git merge --no-edit origin/main",
+  "exit_code": 1,
+  "stdout": "Auto-merging 1/lower.py\nCONFLICT (content): Merge conflict in 1/lower.py\nAuto-merging docs/conflict-practice.md\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+  "stderr": "",
+  "conflicted_file": "1/lower.py",
+  "content_with_conflict_markers": "\"\"\"문장을 소문자로 바꾼다.\"\"\"\n\nfrom src.common import normalize_spaces\n\n\ndef to_lower(text: str) -> str:\n    \"\"\"문장을 소문자로 바꾼다. 입력의 공백 처리 방식은 작업 브랜치에서 결정한다.\"\"\"\n<<<<<<< HEAD\n    text = text.strip()\n=======\n    text = normalize_spaces(text)\n>>>>>>> origin/main\n    return text.lower()\n\n\nif __name__ == \"__main__\":\n    print(to_lower(\"  Hello   Team  \"))  # 공백 정리 완료 후 예상: hello team\n",
+  "before_results": [
+    {
+      "input": "  Hello   Team  ",
+      "actual": "hello   team",
+      "expected": "hello team"
+    },
+    {
+      "input": " A\tB\nC ",
+      "actual": "a\tb\nc",
+      "expected": "a b c"
+    },
+    {
+      "input": "",
+      "actual": "",
+      "expected": ""
+    },
+    {
+      "input": " \t\n ",
+      "actual": "",
+      "expected": ""
+    },
+    {
+      "input": " 안녕  팀 ",
+      "actual": "안녕  팀",
+      "expected": "안녕 팀"
+    }
+  ]
+}
