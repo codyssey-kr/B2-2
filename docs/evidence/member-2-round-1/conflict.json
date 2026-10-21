@@ -1,0 +1,40 @@
+{
+  "source": "Fresh replay in an isolated temporary clone on 2026-10-21; original 1st-round terminal output was not preserved.",
+  "original_merge_stdout": null,
+  "branch_head_before": "2055c612023db5b1b12885c971bc66a91dfd4cf6",
+  "main_at_merge": "72e83aa9ddf65b32be69e402b6baa9d6aa56a482",
+  "replay_command": "git merge --no-commit 72e83aa9ddf65b32be69e402b6baa9d6aa56a482",
+  "exit_code": 1,
+  "stdout": "Auto-merging 2/length.py\nCONFLICT (content): Merge conflict in 2/length.py\nAuto-merging docs/conflict-practice.md\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+  "stderr": "",
+  "conflicted_file": "2/length.py",
+  "content_with_conflict_markers": "\"\"\"중간 공백을 포함한 글자 수를 센다.\"\"\"\n\nfrom src.common import normalize_spaces\n\n\ndef count_characters(text: str) -> int:\n    \"\"\"중간 공백을 포함한 글자 수를 센다. 입력의 공백 처리 방식은 작업 브랜치에서 결정한다.\"\"\"\n<<<<<<< HEAD\n    text = text.strip()\n=======\n    text = normalize_spaces(text)\n>>>>>>> 72e83aa9ddf65b32be69e402b6baa9d6aa56a482\n    return len(text)\n\n\nif __name__ == \"__main__\":\n    print(count_characters(\"  Hello   Team  \"))  # 공백 정리 완료 후 예상: 10\n",
+  "before_after_results": [
+    {
+      "input": "  Hello   Team  ",
+      "before": 12,
+      "after": 10
+    },
+    {
+      "input": " a\tB\nc ",
+      "before": 5,
+      "after": 5
+    },
+    {
+      "input": "",
+      "before": 0,
+      "after": 0
+    },
+    {
+      "input": " \t\n ",
+      "before": 0,
+      "after": 0
+    },
+    {
+      "input": " 안녕  팀 ",
+      "before": 5,
+      "after": 4
+    }
+  ],
+  "resolution_commit": "1aae7aaed69bcedc64980fa0079e3b0bac63fd1c"
+}

@@ -1,0 +1,43 @@
+{
+  "source": "Reexecuted by Codex on 2026-10-21 against unchanged 2/length.py at HEAD 7f5859f.",
+  "function": "count_characters",
+  "method": "runpy.run_path('2/length.py') with normal and boundary inputs; complete command in README.md",
+  "results": [
+    {
+      "input": "  Hello   Team  ",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "input": " a\tB\nc ",
+      "expected": 5,
+      "actual": 5,
+      "passed": true
+    },
+    {
+      "input": "",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "input": " \t\n ",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "input": " 안녕  팀 ",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    }
+  ],
+  "direct_run": {
+    "command": "PYTHONPATH=. python3 2/length.py",
+    "exit_code": 0,
+    "stdout": "10\n",
+    "stderr": ""
+  }
+}
