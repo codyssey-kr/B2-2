@@ -47,7 +47,7 @@
 - 양쪽 코드와 충돌 마커: `text.strip()`과 `normalize_spaces(text)`가 같은 줄에서 충돌했습니다. `<<<<<<< HEAD`, `=======`, `>>>>>>> origin/main`을 확인했습니다.
 - 공백 처리 방식 비교와 합의한 해결 이유: `text.strip()`은 앞뒤 공백만 제거하지만, `normalize_spaces(text)`는 연속 공백과 탭·줄바꿈까지 정리합니다. `split()`으로 인해 단어 수는 같을 수 있으나 팀의 공통 처리 기준에 맞춰 `normalize_spaces(text)`를 선택했습니다.
 - 실행 명령·입력·예상 결과·실제 결과: `PYTHONPATH=. python3 2/words.py` 실행 시 예상·실제 `2`. `" a\tB\nc "`은 `3`, `""`와 `" \t\n "`은 각각 `0`으로 예상·실제 결과가 일치했습니다.
-- PR·해결 커밋 링크: PR 및 충돌 해결 커밋 생성 후 추가 예정.
+- PR·해결 커밋 링크: [PR #26](https://github.com/codyssey-kr/B2-2/pull/26), [해결 커밋 0ed95d3](https://github.com/codyssey-kr/B2-2/commit/0ed95d31981fd61625fb7e8ea1940e994c1a57e7).
 - 배운 점과 예방 방법: 최종 출력이 같더라도 내부 처리 방식은 다를 수 있음을 확인했습니다. 공통 함수 사용 기준을 통일하면 코드의 일관성을 유지하고 유사한 충돌을 예방할 수 있습니다.
 
 ## 팀원 3 · 1차

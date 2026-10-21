@@ -32,7 +32,7 @@
 - reset 후 HEAD·index·작업 파일 상태: HEAD는 `0ed95d3`으로 돌아갔고, index에는 `A  docs/practice/member-2-reset.md`가 표시됐습니다. 파일과 내용은 그대로 유지됐습니다.
 - 변경을 유지한 채 다시 커밋한 결과: `a7b9a5d` 커밋으로 연습 파일을 다시 기록했습니다.
 - 주의점과 선택 이유: `--soft`는 커밋 위치만 변경하고 index와 작업 파일을 유지합니다. 공유된 커밋 이력을 변경하지 않도록 Push 전에 별도 실습 커밋으로 진행했습니다.
-- PR·커밋·증빙 링크: PR 생성 후 추가 예정. 실습 커밋 `26256ba`는 reset으로 취소했으며, 재커밋 `a7b9a5d`를 기록했습니다.
+- PR·커밋·증빙 링크: [PR #26](https://github.com/codyssey-kr/B2-2/pull/26), [재커밋 a7b9a5d](https://github.com/codyssey-kr/B2-2/commit/a7b9a5d210baab3ce1e6e47bfcfeb6a394527efa). `26256ba`는 reset으로 취소했으며, 실제 실행 결과는 위 항목에 기록했습니다.
 
 원격에 공개하지 않은 본인 실습 커밋으로만 수행합니다.
 
