@@ -1,0 +1,39 @@
+{
+  "function": "to_lower",
+  "method": "runpy.run_path with normal and boundary inputs",
+  "results": [
+    {
+      "input": "  Hello   Team  ",
+      "expected": "hello team",
+      "actual": "hello team",
+      "passed": true
+    },
+    {
+      "input": " A\tB\nC ",
+      "expected": "a b c",
+      "actual": "a b c",
+      "passed": true
+    },
+    {
+      "input": "",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "input": " \t\n ",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "input": " 안녕  팀 ",
+      "expected": "안녕 팀",
+      "actual": "안녕 팀",
+      "passed": true
+    }
+  ],
+  "command": "PYTHONPATH=. python3 1/lower.py",
+  "exit_code": 0,
+  "stdout": "hello team\n"
+}
