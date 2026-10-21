@@ -25,14 +25,14 @@
 
 ## 2번: reset --soft
 
-- 참여자:
-- 상황·기준 브랜치:
-- 공개 전 커밋과 부모 커밋:
-- 실제 명령:
-- reset 후 HEAD·index·작업 파일 상태:
-- 변경을 유지한 채 다시 커밋한 결과:
-- 주의점과 선택 이유:
-- PR·커밋·증빙 링크:
+- 참여자: `YeonJin`; `reset --soft`를 이용한 커밋 취소 및 변경 유지 실습을 수행했습니다.
+- 상황·기준 브랜치: `feature/2-round-2-heoney`에서 충돌 해결 커밋 `0ed95d3`을 완료한 후 별도의 실습 파일을 생성했습니다.
+- 공개 전 커밋과 부모 커밋: 실습 커밋 `26256ba`, 부모 커밋 `0ed95d3`.
+- 실제 명령: `git commit -m "docs: add reset practice note"` → `git reset --soft HEAD~1` → `git status --short` → `git diff --cached -- docs/practice/member-2-reset.md` → `git commit -m "docs: retain reset practice changes"`.
+- reset 후 HEAD·index·작업 파일 상태: HEAD는 `0ed95d3`으로 돌아갔고, index에는 `A  docs/practice/member-2-reset.md`가 표시됐습니다. 파일과 내용은 그대로 유지됐습니다.
+- 변경을 유지한 채 다시 커밋한 결과: `a7b9a5d` 커밋으로 연습 파일을 다시 기록했습니다.
+- 주의점과 선택 이유: `--soft`는 커밋 위치만 변경하고 index와 작업 파일을 유지합니다. 공유된 커밋 이력을 변경하지 않도록 Push 전에 별도 실습 커밋으로 진행했습니다.
+- PR·커밋·증빙 링크: PR 생성 후 추가 예정. 실습 커밋 `26256ba`는 reset으로 취소했으며, 재커밋 `a7b9a5d`를 기록했습니다.
 
 원격에 공개하지 않은 본인 실습 커밋으로만 수행합니다.
 
