@@ -5,7 +5,7 @@ from src.common import normalize_spaces
 
 def count_words(text: str) -> int:
     """공백으로 구분한 단어 수를 센다. 입력의 공백 처리 방식은 작업 브랜치에서 결정한다."""
-    text = text  # 공백 처리 구현 위치
+    text = text.strip()
     return len(text.split())
 
 
