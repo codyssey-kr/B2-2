@@ -76,8 +76,9 @@ PR 리뷰 의견에 답변하고 필요한 수정을 반영한 뒤, 작성자 �
 예상 출력: Hello Team!
 직접 입력 테스트: " Hello Team " → "Hello Team!", " a\tB\nc " → "a B c!", "" → '', " \t\n " → ''
 실제 결과: " Hello Team " → "Hello Team!", " a\tB\nc " → "a B c!", "" → '', " \t\n " → ''
-- PR·해결 커밋 링크: PR: [생성 후 실제 PR URL 기록]
-충돌 해결 커밋: 4ed3463 — [GitHub 커밋 URL 기록]
+- PR·해결 커밋 링크:
+  - PR: [#32 — 팀원 3 · 2차 충돌 해결](https://github.com/codyssey-kr/B2-2/pull/32)
+  - 충돌 해결 커밋: [4ed3463](https://github.com/codyssey-kr/B2-2/commit/4ed3463)
 - 배운 점과 예방 방법: 같은 줄을 서로 다른 방식으로 수정하면 병합 충돌이 발생할 수 있다. 공통 함수를 재사용하고, 충돌 해결 후 정상 입력과 경계 입력을 모두 테스트한다.
 
 ## 팀원 4 · 1차
