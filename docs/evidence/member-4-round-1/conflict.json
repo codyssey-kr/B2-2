@@ -1,0 +1,37 @@
+{
+  "branch_head_before": "de3995e6c92f58867291cf052dd04343a4b52887",
+  "main_at_merge": "a062580f3ce24c25a49b63195067806fc71f5d6c",
+  "command": "git merge --no-edit origin/main",
+  "exit_code": 1,
+  "stdout": "Auto-merging 4/first.py\nCONFLICT (content): Merge conflict in 4/first.py\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+  "stderr": "",
+  "conflicted_file": "4/first.py",
+  "content_with_conflict_markers": "from src.common import normalize_space\n  \n  def first_word(text: str) -> str:\n      \"\"\"문장의 첫 단어를 반환한다. 빈 입력은 빈 문자열을 반환한다.\"\"\"\n++<<<<<<< HEAD\n +    text = text.strip()\n++=======\n+     text = normalize_spaces(text)\n++>>>>>>> main\n      return text.split(\" \")[0]",
+  "before_results": [
+    {
+      "input": "  Hello   Team  ",
+      "expected": "Hello",
+      "actual": "Hello"
+    },
+    {
+      "input": " a\tB\nc ",
+      "expected": "a",
+      "actual": "a\tB\nc"
+    },
+    {
+      "input": "",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "input": " \t\n ",
+      "expected": "",
+      "actual": "\t\n"
+    },
+    {
+      "input": " 안녕  팀 ",
+      "expected": "안녕",
+      "actual": "안녕"
+    }
+  ]
+}
