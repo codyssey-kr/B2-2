@@ -1,0 +1,20 @@
+{
+  "source": "Reexecuted by Codex on 2026-10-21 against unchanged 2/words.py at HEAD 42a7761.",
+  "function": "count_words",
+  "default_run": {
+    "command": "PYTHONPATH=. python3 2/words.py",
+    "exit_code": 0,
+    "stdout": "2\n"
+  },
+  "case_run": {
+    "command": "PYTHONPATH=. python3 - with runpy.run_path('2/words.py'); see README.md for the complete command",
+    "exit_code": 0,
+    "stdout": "'  Hello   Team  ': expected=2, actual=2\n' a\\tB\\nc ': expected=3, actual=3\n'': expected=0, actual=0\n' \\t\\n ': expected=0, actual=0\nPASS: 4/4\n"
+  },
+  "results": [
+    {"input": "  Hello   Team  ", "expected": 2, "actual": 2, "passed": true},
+    {"input": " a\tB\nc ", "expected": 3, "actual": 3, "passed": true},
+    {"input": "", "expected": 0, "actual": 0, "passed": true},
+    {"input": " \t\n ", "expected": 0, "actual": 0, "passed": true}
+  ]
+}
