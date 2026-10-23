@@ -68,18 +68,57 @@ PR 리뷰 의견에 답변하고 필요한 수정을 반영한 뒤, 작성자 �
 
 ## 팀원 3 · 2차
 
-- 참여자와 역할: 최민채; exclaim.py의 공백 처리 충돌 해결, 테스트 및 문서 기록 담당.
-- 브랜치·기준 커밋·파일: 작업 브랜치: feature/3-round-2, 기준 브랜치: origin/main, 충돌 해결 커밋: 4ed3463, 대상 파일: 3/exclaim.py
-- 양쪽 코드와 충돌 마커: 작업 브랜치: text = text.strip(), main: text = normalize_spaces(text), <<<<<<< HEAD, =======, >>>>>>> origin/main에서 충돌 발생
-- 공백 처리 방식 비교와 합의한 해결 이유: strip()은 앞뒤 공백만 제거하지만, normalize_spaces(text)는 앞뒤 공백을 제거하고 연속 공백·탭·줄바꿈을 한 칸으로 정리한다. 팀의 공통 공백 처리 요구사항을 만족하기 위해 normalize_spaces(text)를 선택했다.
-- 실행 명령·입력·예상 결과·실제 결과: 실행 명령: PYTHONPATH=. python3 3/exclaim.py
+- 참여자와 역할: 최민채; 3/exclaim.py의 공백 처리 충돌 해결, 입력별 테스트, Git revert 실습 및 결과 문서화를 수행했습니다.
+- 브랜치·기준 커밋·파일: 충돌 해결 작업 브랜치 feature/3-round-2, 기준 브랜치 origin/main, 충돌 해결 커밋 4ed3463, 대상 파일 3/exclaim.py. revert 실습은 별도 브랜치 feature/3-round-2-retry에서 수행했습니다.
+- 양쪽 코드와 충돌 마커: 작업 브랜치에서는 text = text.strip()을 사용했고, main에서는 text = normalize_spaces(text)를 사용했습니다. 두 변경 사항이 같은 코드 영역에 적용되어 <<<<<<< HEAD, =======, >>>>>>> origin/main 충돌 마커가 발생했습니다.
+- 공백 처리 방식 비교와 해결 이유: text.strip()은 문자열 앞뒤의 공백을 제거하지만 내부의 연속 공백은 정리하지 않습니다. normalize_spaces(text)는 앞뒤 공백을 제거하고 내부 연속 공백, 탭 및 줄바꿈을 정리합니다. 프로젝트의 공통 공백 처리 규칙을 따르기 위해 normalize_spaces(text)를 선택했습니다.
+- 실행 명령·입력·예상 결과·실제 결과:
+실행 명령: PYTHONPATH=. python3 3/exclaim.py
 예상 출력: Hello Team!
-직접 입력 테스트: " Hello Team " → "Hello Team!", " a\tB\nc " → "a B c!", "" → '', " \t\n " → ''
-실제 결과: " Hello Team " → "Hello Team!", " a\tB\nc " → "a B c!", "" → '', " \t\n " → ''
+일반 입력 " Hello Team " → "Hello Team!"
+입력 " a\tB\nc " → "a B c!"
+빈 입력 "" → ''
+공백 입력 " \t\n " → ''
+실제 결과는 예상 결과와 일치했습니다.
 - PR·해결 커밋 링크:
-  - PR: [#32 — 팀원 3 · 2차 충돌 해결](https://github.com/codyssey-kr/B2-2/pull/32)
-  - 충돌 해결 커밋: [4ed3463](https://github.com/codyssey-kr/B2-2/commit/4ed3463)
-- 배운 점과 예방 방법: 같은 줄을 서로 다른 방식으로 수정하면 병합 충돌이 발생할 수 있다. 공통 함수를 재사용하고, 충돌 해결 후 정상 입력과 경계 입력을 모두 테스트한다.
+PR: #32 — 충돌 해결 및 revert 실습
+충돌 해결 커밋: 4ed3463
+- 배운 점과 예방 방법: 같은 줄을 서로 다른 방식으로 수정하면 병합 충돌이 발생할 수 있습니다. 각 구현의 동작과 요구사항을 비교하고, 충돌 해결 후 정상 입력과 경계 입력을 모두 테스트해야 합니다. 공통 함수를 재사용하면 공백 처리 규칙을 일관되게 유지할 수 있습니다.
+- 추가 실습: Git revert
+- 참여자: 최민채.
+- 상황·기준 브랜치: feature/3-round-2-retry에서 기존 충돌 해결 결과를 유지한 채 별도의 실습용 변경을 만들었습니다. 실습 시작 당시 기준 커밋은 0bb0a08이었습니다.
+- 원격에 push한 대상 실습 커밋: d11eb50 — test: add revert practice change for exclaim.
+- 실제 명령:
+git status
+git diff --check
+git diff -- 3/exclaim.py
+PYTHONPATH=. python3 3/exclaim.py
+git add 3/exclaim.py
+git commit -m "test: add revert practice change for exclaim"
+git push origin feature/3-round-2-retry
+git revert --no-edit d11eb50
+git log --oneline -5
+git diff HEAD^ HEAD -- 3/exclaim.py
+git push origin feature/3-round-2-retry
+- 새로 생긴 revert 커밋과 되돌린 파일: a8bf854. 3/exclaim.py에서 text = text.strip() 변경을 취소하고 text = normalize_spaces(text)로 복구했습니다.
+- 기존 이력이 보존되었음을 확인한 결과: git log --oneline -5에서 실습용 커밋 d11eb50과 revert 커밋 a8bf854가 모두 남아 있음을 확인했습니다. 두 커밋은 원격 브랜치 origin/feature/3-round-2-retry에도 push했습니다.
+- revert 후 검증 명령·입력·예상 결과·실제 결과:
+PYTHONPATH=. python3 3/exclaim.py → Hello Team!
+일반 입력 " Hello Team " → 'Hello Team!'
+빈 입력 "" → ''
+공백 입력 " " → ''
+탭 입력 "\tHello\t" → 'Hello!'
+줄바꿈 입력 "\nHello\n" → 'Hello!'
+다섯 가지 입력 테스트가 모두 예상 결과와 일치했습니다.
+- 주의점과 reset 대신 선택한 이유: git revert는 기존 커밋을 삭제하거나 브랜치 이력을 재작성하지 않고, 변경 사항을 취소하는 새 커밋을 생성합니다. 이미 원격에 push한 변경을 취소하면서 이력을 보존하기 위해 git reset 대신 git revert를 선택했습니다.
+- PR·커밋·증빙 링크:
+PR: #32 — 충돌 해결 및 revert 실습
+충돌 해결 커밋: 4ed3463
+실습용 커밋: d11eb50
+revert 커밋: a8bf854
+로컬 증빙 폴더: evidence/revert-practice/
+캡처 파일명은 실제 파일 목록을 확인한 후 최종 기록합니다.
+- 배운 점과 예방 방법: 이미 원격에 push한 커밋을 취소할 때 git revert를 사용하면 기존 이력을 보존하면서 취소 내역을 남길 수 있습니다. 실습 결과와 실제 명령 출력, 테스트 결과 및 증빙을 함께 기록하면 이후 같은 문제를 재현하고 검토하기 쉽습니다.
 
 ## 팀원 4 · 1차
 
