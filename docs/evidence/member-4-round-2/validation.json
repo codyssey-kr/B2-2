@@ -1,0 +1,33 @@
+{
+  "function": "last_word",
+  "method": "runpy.run_path with normal and boundary inputs",
+  "results": [
+    {
+      "input": "  Hello   Team  ",
+      "expected": "Team",
+      "actual": "Team",
+      "passed": true
+    },
+    {
+      "input": " a\tB\nc ",
+      "expected": "c",
+      "actual": "c",
+      "passed": true
+    },
+    {
+      "input": "",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "input": " \t\n ",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    }
+  ],
+  "command": "PYTHONPATH=. python3 4/last.py",
+  "exit_code": 0,
+  "stdout": "Team\n"
+}

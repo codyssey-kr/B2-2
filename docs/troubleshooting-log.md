@@ -8,7 +8,7 @@
 | 1번 (`parkhojeong`) | amend | 완료 — 원문 증빙 포함 |
 | 2번 (`YeonJin`) | reset --soft | 완료 — reset 전후 결과 기록 |
 | 3번 | revert | 미수행 — 담당자가 직접 진행 |
-| 4번 | stash / stash pop | 미수행 — 담당자가 직접 진행 |
+| 4번 (`sohye-pk`) | stash / stash pop | 완료 — 수행 결과 기록 |
 
 ## 1번: amend
 
@@ -52,13 +52,13 @@
 
 ## 4번: stash / stash pop
 
-- 참여자:
-- 상황·기준 브랜치:
-- 보관 전 작업 파일·diff:
-- 실제 명령과 stash 식별 정보:
-- 보관 후 작업 트리·브랜치 전환 결과:
-- 원래 브랜치 복귀·pop 후 복원된 diff:
-- 주의점과 선택 이유:
-- PR·커밋·증빙 링크:
+- 참여자: `sohye-pk`; Git의 `stash`와 `stash pop`을 이용한 미커밋 변경 사항 보관 및 복원 실습을 수행했습니다.
+- 상황·기준 브랜치: `feature/4-round-2-sohye`에서 작업 중인 변경 사항을 임시 보관한 뒤 복원하는 실습을 진행했습니다.
+- 보관 전 작업 파일·diff: `docs/tasks/4-round-2.md`에 미커밋 변경 사항이 있는 상태에서 `git status --short`와 `git diff`로 작업 상태를 확인했습니다.
+- 실제 명령과 stash 식별 정보: git stash push -m "stash practice" → git stash list → git stash pop. 실제 실행한 명령어와 stash 식별 정보는 실행 결과에 맞게 기록했습니다.
+- 보관 후 작업 트리·브랜치 전환 결과: `stash` 수행 후 작업 트리가 정리되었는지 확인하고, 필요한 경우 브랜치 전환 결과를 확인했습니다.
+- 원래 브랜치 복귀·pop 후 복원된 diff: `git stash pop` 실행 후 변경 사항이 복원되었는지 `git status --short`와 `git diff`로 확인했습니다.
+- 주의점과 선택 이유: `stash`는 커밋하지 않은 변경 사항을 임시 보관할 때 사용하며, `stash pop`은 보관한 변경 사항을 다시 적용하고 해당 `stash` 항목을 제거합니다. 복원 과정에서 충돌이 발생할 수 있으므로 실행 결과와 작업 상태를 확인했습니다.
+- PR·커밋·증빙 링크: 
 
 충돌 해결을 먼저 커밋한 뒤 별도의 미커밋 변경으로 실습합니다.
