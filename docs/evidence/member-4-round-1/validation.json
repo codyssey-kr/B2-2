@@ -1,0 +1,40 @@
+{
+  "function": "first_word",
+  "method": "Run script with normal and boundary inputs",
+  "results": [
+    {
+      "input": "  Hello   Team  ",
+      "expected": "Hello",
+      "actual": "Hello",
+      "passed": true
+    },
+    {
+      "input": " a\tB\nc ",
+      "expected": "a",
+      "actual": "a",
+      "passed": true
+    },
+    {
+      "input": "",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "input": " \t\n ",
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "input": " 안녕  팀 ",
+      "expected": "안녕",
+      "actual": "안녕",
+      "passed": true
+    }
+  ],
+  "command": "PYTHONPATH=. python3 4/first.py",
+  "exit_code": 0,
+  "stdout": "Hello\n",
+  "stderr": ""
+}
