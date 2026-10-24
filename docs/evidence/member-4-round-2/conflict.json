@@ -1,0 +1,32 @@
+{
+  "branch_head_before": "02e0a70f7cabb418b67659c3a98511a672461539",
+  "main_at_merge": "18bc3e28fd7554a5c8bcf67503057cd89beb39f5",
+  "command": "git merge --no-edit origin/main",
+  "exit_code": 1,
+  "stdout": "Auto-merging 4/last.py\nCONFLICT (content): Merge conflict in 4/last.py\nAuto-merging docs/conflict-practice.md\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+  "stderr": "",
+  "conflicted_file": "4/last.py",
+  "content_with_conflict_markers": "\"\"\"문장의 마지막 단어를 반환한다.\"\"\"\n\nfrom src.common import normalize_spaces\n\n\ndef last_word(text: str) -> str:\n    \"\"\"문장의 마지막 단어를 반환한다. 빈 입력은 빈 문자열을 반환한다.\"\"\"\n<<<<<<< HEAD\n    text = text.strip()\n=======\n    text = normalize_spaces(text)\n>>>>>>> origin/main\n    return text.split(\" \")[-1]\n\n\nif __name__ == \"__main__\":\n    print(to_lower(\"  Hello   Team  \"))  # 공백 정리 완료 후 예상: hello team\n",
+  "before_results": [
+    {
+      "input": "  Hello   Team  ",
+      "expected": "Team",
+      "actual": ""
+    },
+    {
+      "input": " a\tB\nc ",
+      "expected": "c",
+      "actual": ""
+    },
+    {
+      "input": "",
+      "actual": "",
+      "expected": ""
+    },
+    {
+      "input": " \t\n ",
+      "expected": "",
+      "actual": ""
+    }
+  ]
+}
