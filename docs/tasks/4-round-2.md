@@ -34,3 +34,27 @@
 실질적인 리뷰에 답변·수정으로 응답합니다. 준비 커밋과 1번 사례는 본인의 수행 증빙이 아닙니다.
 
 전체 명령과 순서는 [실습 안내](../conflict-practice.md)를 참고합니다.
+
+## 2차 Git 실습: stash / stash pop
+
+먼저 1차 PR을 마치고, 1번 2차 사례가 main에 들어온 뒤 이 브랜치의 코드 충돌을 해결합니다.
+충돌 해결을 커밋하고 작업 트리가 깨끗한 것을 확인한 뒤 진행합니다.
+아래에서는 이미 추적 중인 이 참고 문서에 미커밋 변경을 추가합니다.
+
+```sh
+printf '\n2차 stash 실습: 미커밋 변경 보관과 복원 확인\n' >> docs/tasks/4-round-2.md
+git diff -- docs/tasks/4-round-2.md
+git stash push -m "member 4 round 2 practice" -- docs/tasks/4-round-2.md
+git stash list
+git status --short
+git switch --detach origin/main
+git switch feature/4-round-2
+git stash pop
+git diff -- docs/tasks/4-round-2.md
+```
+
+중간에 다른 stash를 만들지 않고 방금 보관한 항목을 복원합니다.
+보관 전·복원 후 diff가 같은지, 보관 중 작업 트리가 깨끗했는지 확인합니다.
+`docs/troubleshooting-log.md`의 4번 항목에 stash 식별 정보, 실제 명령 출력,
+브랜치 전환, 복원 결과와 주의점을 기록합니다. 복원된 문서와 기록을 커밋합니다.
+이 안내 자체는 실습 완료 증빙이 아닙니다.
